@@ -7,6 +7,8 @@ Docker image which includes Scala on Alpine Linux.
 
 ---
 
-### Why?
+## WORK IN PROGRESS
+
+### Why another Alpine Image?
 
 I could not (at the time) find another Scala image based on Alpine.
