@@ -15,7 +15,37 @@ RUN apk upgrade --update && \
      http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION}u${JAVA_UPDATE}-b${JAVA_BUILD}/server-jre-${JAVA_VERSION}u${JAVA_UPDATE}-linux-x64.tar.gz | tar -xzf - -C /opt && \
     mv /opt/jdk1.${JAVA_VERSION}.0_${JAVA_UPDATE}/jre /opt && \
     rm -rf /opt/jdk1.${JAVA_VERSION}.0_${JAVA_UPDATE} && \
-    chown -R root: /opt
-
+    chown -R root: /opt && \
+    rm -rf \
+       /opt/jre/plugin \  
+       /opt/jre/lib/jfr \
+       /opt/jre/lib/*jfx* \
+       /opt/jre/lib/desktop \
+       /opt/jre/lib/deploy* \
+       /opt/jre/lib/*javafx* \
+       /opt/jre/lib/javaws.jar \
+       /opt/jre/lib/oblique-fonts \
+       /opt/jre/lib/ext/jfxrt.jar \
+       /opt/jre/lib/ext/nashorn.jar \
+       /opt/jre/lib/amd64/libdecora_sse.so \
+       /opt/jre/lib/amd64/libprism_*.so \
+       /opt/jre/lib/amd64/libfxplugins.so \
+       /opt/jre/lib/amd64/libglass.so \
+       /opt/jre/lib/amd64/libgstreamer-lite.so \
+       /opt/jre/lib/amd64/libjavafx*.so \
+       /opt/jre/lib/amd64/libjfx*.so \
+       /opt/jre/bin/jjs \
+       /opt/jre/bin/orbd \
+       /opt/jre/bin/rmid \
+       /opt/jre/bin/javaws \
+       /opt/jre/bin/pack200 \
+       /opt/jre/bin/keytool \
+       /opt/jre/bin/tnameserv \
+       /opt/jre/bin/unpack200 \
+       /opt/jre/bin/policytool \
+       /opt/jre/bin/servertool \
+       /opt/jre/bin/rmiregistry && \
+    apk del curl ca-certificates tar
+       
 ENV JAVA_HOME /opt/jre
 ENV PATH ${PATH}:${JAVA_HOME}/bin
