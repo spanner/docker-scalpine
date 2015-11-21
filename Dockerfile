@@ -7,7 +7,10 @@ RUN apk upgrade --update && \
     curl --progress-bar -jkSL http://downloads.typesafe.com/scala/${SCALA_VERSION}/scala-${SCALA_VERSION}.tgz | tar -xzf - -C /opt && \
     mv /opt/scala-${SCALA_VERSION} /opt/scala && \
     chown -R root: /opt/scala && \
-    rm -rf /var/cache/apk/*
+    rm -rf \
+     /var/cache/apk/* \
+     /opt/scala/man \
+     /opt/scala/doc
 
 ENV SCALA_HOME /opt/scala
 ENV PATH ${PATH}:${SCALA_HOME}/bin
