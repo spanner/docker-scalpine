@@ -10,7 +10,8 @@ RUN apk upgrade --update && \
     rm -rf \
      /var/cache/apk/* \
      /opt/scala/man \
-     /opt/scala/doc
+     /opt/scala/doc && \
+    apk del curl tar
 
 ENV SCALA_HOME /opt/scala
 ENV PATH ${PATH}:${SCALA_HOME}/bin
