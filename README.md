@@ -1,14 +1,10 @@
 # docker-scalpine
 
-Docker image which includes Scala on Alpine Linux.
+Docker image for [Scala](http://www.scala-lang.org/) on [Alpine](http://www.alpinelinux.org/) Linux.
 
-- [Alpine](http://www.alpinelinux.org/) - small footprint OS    
-- [Scala](http://www.scala-lang.org/) - functional language on the JVM 
+Scala version: `2.11.7`    
+Current size: `150 MB`
 
 ---
 
-## WORK IN PROGRESS
-
-### Why another Alpine Image?
-
-I could not (at the time) find another Scala image based on Alpine.
+Based on [jonjack/jalpine](https://hub.docker.com/r/jonjack/jalpine/) - minimal image for Java 8 Server JRE on Alpine Linux.
