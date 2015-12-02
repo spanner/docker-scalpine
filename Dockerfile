@@ -12,7 +12,8 @@ RUN echo 'http://dl-4.alpinelinux.org/alpine/v3.3/main' >> /etc/apk/repositories
      /var/cache/apk/* \
      /opt/scala/man \
      /opt/scala/doc && \
-    apk del curl tar
+    apk del curl tar && \
+    apk add git
 
 ENV SCALA_HOME /opt/scala
 ENV PATH ${PATH}:${SCALA_HOME}/bin
